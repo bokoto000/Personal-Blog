@@ -1,0 +1,45 @@
+<body>
+
+    <style>
+        .close {
+            color: #aaaaaa;
+            float: top;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+                
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+
+    <h1 align="center">Events for: {{day}}.{{month}}.{{year}}</h1>
+    <style>
+        .button {
+            background-color: #008CBA; /* Green */
+            border: none;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            }
+    </style>
+    <form action="/calendar">
+        <input type="submit" class=button style="float:center" value="Назад"></button>
+    </form>
+    {{#each events}} 
+        <div class="calendar__day day"  style="background:white;word-wrap: break-word;">
+                <span class="close"><a href="/calendar/events/removeEvent?day={{../day}}&id={{id}}">&times;</a></span>
+                <div>Name: {{name}}</div>
+                <div>Description: {{description}}</div>
+        </div>
+    {{/each}}
+</body>

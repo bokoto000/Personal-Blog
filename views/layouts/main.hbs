@@ -1,0 +1,106 @@
+<html lang="en">
+    <head>
+        <script src="/dist/jquery.min.js"></script>
+        <link rel="stylesheet" href="/dist/css/bootstrap.min.css" >
+        <link rel="stylesheet" type="text/css" href="../../animate.css">
+        <script src="/dist/js/bootstrap.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../../sidebar.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Boris Velkovski</title>
+    </head>
+
+    <header>
+        <div class="jumbotron" style="margin-bottom: 0px;background-image: url(../../header.png);background-size:100%" >
+                <style>
+                    @media(max-width:767px){
+                        h2 {font-size:7vw;}
+                    }
+                    @media (min-width: 768px) {  
+                        h2 {font-size:3vw;} /*1rem = 16px*/
+                    }
+                </style>
+                <h2 style="color: white; text-align:center" >Boris Velkovski 's Tech Blog</h2>
+        </div>
+
+        <nav class="navbar navbar-expand-md navbar-dark  fixed-top" style="background-color: #0091df">
+            
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#collapse_target">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+    
+                <div class="collapse navbar-collapse" id="collapse_target">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+    </header>
+
+ <body>    
+        
+
+        <div class="container" style="float:left;max-width: 1920;" >
+            <div class="row">
+                    <div class="col-md-3" style="padding:20">
+                        <h1>
+                            <form action="/search" style="border:1px solid #ddd;background-color:#f2f2f2" method="POST">
+                                <div style="padding:3%">
+                                    <input type="text" placeholder="Search.." name="search" style="width:80%;border-radius: 0.25rem">
+                                    <input type="image" src="../../search.png" alt="Submit" style="width:10%"><i class="fa fa-search"></i></button>
+                                </div>
+                            </form>
+                        </h1>
+
+                        <div class="sidebar widget">
+                            <h3>Recent Posts</h3>
+                            <ul>
+                                {{#each recentPosts}}
+                                    <li>
+                                        <div class="sidebar-thumb">
+                                            <img class="animated rollIn" src="../../{{previewPicture}}.png" alt="" />
+                                        </div>
+                                        <div class="animated bounceInRight">
+                                            <h5 class=""><a href="/posts/{{name}}">{{header}}</a></h5>
+                                        </div>
+                                        <div>
+                                            <span class="time"><i class="fa fa-clock-o"></i>{{date}}</span>
+                                        </div>
+                                        <div class="sidebar-meta">
+                                            <hr>
+                                            
+                                            <span class="comment"><i class="fa fa-comment">
+                                            {{#each tags}}
+                                                {{#if @last}}
+                                                    {{tag}}
+                                                {{else}}
+                                                {{tag}},
+                                                {{/if}} 
+                                            {{/each}}
+                                            </i> </span>
+                                            
+                                        </div>
+                                    </li>
+                                {{/each}}
+                            </ul>
+                        </div>
+                </div>
+                <div class="col-md-9" style="padding-top: 2rem;" >
+                    {{{body}}}
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

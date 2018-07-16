@@ -1,0 +1,22 @@
+<body>
+    {{#each posts}}
+        <div class="card-header" >
+            <div class="card-body">
+                <h5 class="card-title">{{header}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    {{#each tags}}
+                        {{#if @last}}
+                            {{tag}}
+                        {{else}}
+                        {{tag}},
+                        {{/if}} 
+                    {{/each}}
+                </h6>
+                <hr>
+                <p class="card-text">{{headerDesc}}</p>
+                <a href="/posts/{{name}}" class="btn btn-primary">Read more...</a>
+            </div>
+        </div>
+        <br> 
+    {{/each}} 
+</body>

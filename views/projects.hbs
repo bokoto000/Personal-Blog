@@ -1,0 +1,22 @@
+<div class="row">
+    {{#each projects}}
+        <div class="card" style="width: 26rem;margin-left: auto;margin-right: auto;margin-bottom: 1.5%;" >
+                <img class="card-img-top" src="../../{{headerPic}}" alt="Card image cap" >
+            <div class="card-body">
+                <h5 class="card-title">{{header}}</h5>
+                <h6 class="card-subtitle mb-2 text-muted">
+                    {{#each tags}}
+                        {{#if @last}}
+                            {{tag}}
+                        {{else}}
+                        {{tag}},
+                        {{/if}} 
+                    {{/each}}
+                </h6>
+                <a href="/posts/{{name}}" class="btn btn-primary" style="width:100%">Read More</a>
+                <hr>
+                <p class="card-text">{{headerDesc}}</p>
+            </div>
+        </div>
+    {{/each}}
+</div>

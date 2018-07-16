@@ -1,0 +1,36 @@
+<body >
+    <div style="border:1px solid #ddd;padding:1%">
+        {{#with wantedPost}}
+            <h1 style="text-align: center">{{header}}</h1>
+            <h4 style="text-align: center">
+                {{#each tags}}
+                    {{#if @last}}
+                        {{tag}}
+                    {{else}}
+                    {{tag}},
+                    {{/if}} 
+                {{/each}}
+            </h4>
+            {{#if link}}
+                <a href="{{link}}" class="btn btn-primary" style="width:100%;">Go to</a>
+            {{/if}}
+            <hr>
+            {{#each descParagraphs}}
+                <p>{{paragraph}}</p>
+            {{/each}}
+
+            {{#each pictures}}
+                <h4 style="padding-top:2%;text-align:center">{{description}}</h4>
+                <img src="../../{{picture}}" style="max-width: 80%;display:block;margin-left:auto;margin-right:auto">
+            {{/each}}
+            {{#if githubLink}}
+                <br>
+                <br>
+                <a href="{{githubLink}}">
+                    <img src="../../githubMedium.png" style="margin-left:50%;margin-right:50%">
+                </a>
+            {{/if}}
+        {{/with}}
+
+    </div>
+</body>
