@@ -9,6 +9,7 @@ module.exports = {
 function getDB()
 {
     db_name="calendar"
+    console.log(JSON.stringify(process.env));
     //mongodb_connection_string = 'mongodb://127.0.0.1:27017/' + db_name;
     //take advantage of openshift env vars when available:
     mongoURL =process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL  + db_name;
