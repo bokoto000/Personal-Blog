@@ -46,8 +46,6 @@ module.exports = {
             startOfDay=new Date(currYear,currMonth,date,0,0,0);
             endOfDay=new Date(currYear,currMonth,date,23,59,59);
 
-            console.log(startOfDay+";;;;;;;;;" +endOfDay);
-
             Event
                 .find({date:
                     {"$gte": startOfDay,
@@ -62,7 +60,6 @@ module.exports = {
 
         id=req.query.id;
         day=req.query.day;
-        console.log(day);
         Event
             .remove({_id:id})
             .then(()=>{
