@@ -17,7 +17,7 @@ module.exports = (app) => {
     app.use(express.static(path.join(__dirname,'../public/pictures/layout')));
     app.use(express.static(path.join(__dirname,'../public/pictures/posts')));
     app.use(express.static(path.join(__dirname,'../public/scripts')));
-    app.use(express.static(path.join(__dirname,'../node_modules/bootstrap')));
-    app.use(express.static(path.join(__dirname,'../node_modules/jquery')))
+    app.use(express.static(path.join(__dirname,'../public/bootstrap')));
+    app.use(express.static(path.join(__dirname,'../public/jquery')))
     ;
 }
