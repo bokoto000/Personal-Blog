@@ -12,7 +12,7 @@ function getDB()
     console.log(JSON.stringify(process.env));
     //mongodb_connection_string = 'mongodb://127.0.0.1:27017/' + db_name;
     //take advantage of openshift env vars when available:
-    mongoURL =process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL  + db_name;
+    mongoURL =process.env.OPENSHIFT_MONGODB_DB_URL || process.env.MONGO_URL || process.env.MONGO_SERVICE_HOST  + db_name;
     if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
         var mongoServiceName = process.env.DATABASE_SERVICE_NAME.toUpperCase(),
             mongoHost = process.env[mongoServiceName + '_SERVICE_HOST'],
