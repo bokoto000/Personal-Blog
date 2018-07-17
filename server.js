@@ -30,4 +30,4 @@ const host = settings.ip;
 
 console.log(host+" : "+port);
 
-app.listen(port,host, () =>console.log('Server is running on port'));
+app.listen(port, () =>console.log('Server is running on port'));
