@@ -1,5 +1,7 @@
 module.exports = {
     development: {
+        port:process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
+        ip: process.env || process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1',
         db: getDB() ||('mongodb://127.0.0.1:27017/calendar')
     }
 }
@@ -10,6 +12,7 @@ function getDB()
     mongoURLLabel = "";
 
     if (mongoURL == null && process.env.DATABASE_SERVICE_NAME) {
+    mongoURL=""
     var mongoServiceName = process.env.DATABASE_SERVICE_NAME.toUpperCase(),
         mongoHost = process.env[mongoServiceName + '_SERVICE_HOST'],
         mongoPort = process.env[mongoServiceName + '_SERVICE_PORT'],
