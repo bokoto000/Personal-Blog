@@ -25,9 +25,9 @@ app.engine('hbs',handlebars({
 app.set('view engine', 'hbs');
 
 const port = settings.port;
-const ip = settings.ip;
+const host = settings.ip;
 
 
-console.log(ip+" : "+port);
+console.log(host+" : "+port);
 
-app.listen(port,ip, () =>console.log('Server is running on port'));
+app.listen(port,host, () =>console.log('Server is running on port'));
