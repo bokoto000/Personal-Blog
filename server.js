@@ -27,4 +27,7 @@ app.set('view engine', 'hbs');
 const port = settings.port;
 const ip = settings.ip;
 
+
+console.log(ip+" : "+port);
+
 app.listen(port,ip, () =>console.log('Server is running on port'));
